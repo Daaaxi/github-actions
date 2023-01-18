@@ -1,0 +1,17 @@
+name: GitHub Workflow Übung
+on: [push]
+
+jobs:
+
+  print-environment-information:
+    name: Print environment information
+    runs-on: ubuntu-latest
+    
+    steps:
+     - name: Checkout repository code
+      run: |
+        echo "All files in ${{ github.repository }} owned by ${{ github.repository_owner }}"
+        ls ${{ github.workspace }}
+        
+    - name: Ergebnis
+      run: cat src/frontend/app.js
